@@ -1,6 +1,6 @@
 FROM nginx:1.17.9-alpine
 
 # Install curl for Fargate healthcheck
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache curl
 
 COPY index.html /usr/share/nginx/html/index.html
